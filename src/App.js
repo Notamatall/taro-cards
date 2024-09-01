@@ -1,14 +1,20 @@
-import "./App.css";
-import wheel from "./tarot/10.Wheel of Fortune.jpg";
-
+import "./app.css";
+import "./cards.css";
+import "./test.css";
+import { LSKey } from "./constants";
+import CardsGridDesktop from "./CardsGridDesktop";
+import { useEffect, useState } from "react";
 function App() {
+  const [isCardRevealed, setIsCardRevealed] = useState(false);
+  useEffect(() => {
+    const key = localStorage.getItem(LSKey);
+    if (key) {
+      const taroInformation = JSON.parse(key);
+    }
+  }, []);
   return (
-    <div className="App">
-      <div className="cards-layout">
-        <div className="slider">
-          <img src={wheel} alt="taro-card" className="card"></img>
-        </div>
-      </div>
+    <div className="app">
+      <CardsGridDesktop isCardRevealed={isCardRevealed} />
     </div>
   );
 }

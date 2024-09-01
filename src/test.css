@@ -1,0 +1,7 @@
+.rotate-x {
+  transform: rotateX(var(--rotation)) translateZ(50px);
+}
+
+.rotate-y {
+  transform: rotateY(var(--rotation)) translateZ(50px);
+}
