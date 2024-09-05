@@ -1,3 +1,5 @@
+import { LSKey } from "../constants";
+
 export const getRandomUniqueElements = (array, n) => {
   if (n > array.length) {
     throw new Error("n cannot be greater than the length of the array");
@@ -30,4 +32,14 @@ export const getRandomIntInclusive = (min, max) => {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+};
+
+export const setLocalStorageKey = (imageIndex) => {
+  localStorage.setItem(
+    LSKey,
+    JSON.stringify({
+      dateRevealed: Date.now(),
+      index: imageIndex,
+    })
+  );
 };

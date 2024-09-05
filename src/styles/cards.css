@@ -58,12 +58,14 @@
 .reveal-card-btn:active {
   transform: translate(-50%, -50%) scale(0.95);
 }
+
 .card-front {
   height: 100%;
   backface-visibility: hidden;
   position: absolute;
   width: 100%;
 }
+
 .card-back {
   backface-visibility: hidden;
   transform: rotateY(180deg);
@@ -83,13 +85,28 @@
   transform: translate(-50%, -50%) scale(1) rotateY(180deg);
   width: 150px;
 }
-.card-2 {
-  position: relative;
+.card-main {
+  opacity: 0;
+}
+.card {
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate(0, 0) scale(1) rotateY(180deg);
-
+  top: 50%;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: absolute;
+  border: black solid;
   height: 200px;
+  transform: translate(-50%, -50%) scale(1) rotateY(180deg);
   width: 150px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  align-items: center;
 }
 
 .card-bloom::after {

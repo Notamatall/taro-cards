@@ -1,11 +1,14 @@
 import { memo } from "react";
 import { useCallback, useEffect, useState } from "react";
-import { cardWidth, cardHeight, gapBetweenCards, LSKey } from "./constants";
+import { cardWidth, cardHeight, gapBetweenCards } from "./constants";
 import Card from "./Card";
+import { setLocalStorageKey } from "./utils/index";
 import { getRandomUniqueElements, generateRandomArray } from "./utils/index";
+import "./styles/cards.css";
+
 const taroCardsSrcList = require.context("./assets/cards", true);
 
-const CardsGridDesktop = ({ cardInfo }) => {
+const CardsGridDesktopComponent = ({ cardInfo }) => {
   const [cardsList, setCardsList] = useState([]);
   const [isAnimationInProcress, setIsAnimationInProcress] = useState();
 
@@ -152,13 +155,7 @@ const CardsGridDesktop = ({ cardInfo }) => {
                 card.style.top = "50%";
                 card.style.filter = "none";
                 card.style.zIndex = "2";
-                localStorage.setItem(
-                  LSKey,
-                  JSON.stringify({
-                    dateRevealed: Date.now(),
-                    index: lastImageIndex,
-                  })
-                );
+                setLocalStorageKey(lastImageIndex);
               }, 2500 + randomCardsIndexes.length * 1500);
             }, 1500);
           }
@@ -185,5 +182,5 @@ const CardsGridDesktop = ({ cardInfo }) => {
   );
 };
 
-const CardsGridDesktopMemo = memo(CardsGridDesktop);
-export default CardsGridDesktopMemo;
+const CardsGridDesktop = memo(CardsGridDesktopComponent);
+export default CardsGridDesktop;

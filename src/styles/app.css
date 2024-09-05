@@ -9,7 +9,7 @@
 
 .app {
   height: 100%;
-  background-image: url("./assets/backg.jpg");
+  background-image: url("../assets/backg.jpg");
   background-size: 100% 100%;
 }
 

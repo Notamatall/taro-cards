@@ -1,0 +1,35 @@
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mystical-frame {
+  height: 50px;
+  top: 8%;
+  left: 50%;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #6a0dad, #3e007c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.7),
+      inset 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.countdown-timer {
+  font-size: 36px;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
