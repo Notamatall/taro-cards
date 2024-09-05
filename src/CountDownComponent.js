@@ -31,7 +31,7 @@ const Countdown = ({ initialTime }) => {
 
   return (
     <div className="countdown-container">
-      <div className="mystical-frame">
+      <div className="mystical-frame mystical-frame-cd">
         <div className="countdown-timer">{formatTime(timeLeft)}</div>
       </div>
     </div>

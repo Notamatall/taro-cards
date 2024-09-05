@@ -3,15 +3,26 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  animation: fade-in 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.mystical-frame {
+.mystical-frame-cd {
   height: 50px;
   top: 8%;
   left: 50%;
   padding: 20px;
   border-radius: 20px;
   background: linear-gradient(145deg, #6a0dad, #3e007c);
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,5 +42,5 @@
 .countdown-timer {
   font-size: 36px;
   color: white;
-  font-family: "Arial", sans-serif;
+  font-family: "Pirata One", sans-serif;
 }
